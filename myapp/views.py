@@ -9,3 +9,18 @@ def starter(request):
 
 def about(request):
     return render(request,"about.html")
+
+def service(request):
+    return render(request,"services.html")
+
+def doctors(request):
+    return render(request,"doctors.html")
+
+def appointment(request):
+    return render(request,"appointment.html")
+
+def department(request):
+    return render(request,"departments.html")
+
+
+
