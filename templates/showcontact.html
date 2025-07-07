@@ -1,0 +1,32 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block content %}
+
+<h2>List of My Contacts</h2>
+
+<table class="table table-info container">
+   <tr>
+       <th>Name</th>
+       <th>Email</th>
+       <th>Subject</th>
+       <th>Message</th>
+   </tr>
+    {% for time in all %}
+
+    <tr>
+        <td>{{ time.name  }}</td>
+        <td>{{ time.name }}</td>
+        <td>{{ time.name }}</td>
+        <td>{{ time.name }}</td>
+    </tr>
+
+        <td>
+            <a href=""class=" btn btn-outline-success">Edit</a>
+            <a href="/delete/{{ time.id }}"class="btn btn-outline-danger">Delete</a>
+        </td>
+
+    {% endfor %}
+</table>
+
+{% endblock %}
