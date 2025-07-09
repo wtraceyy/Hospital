@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<h2>List of My Contacts</h2>
+<h2 class="text-center">List of My Contacts</h2>
 
 <table class="table table-info container">
    <tr>
@@ -11,20 +11,22 @@
        <th>Email</th>
        <th>Subject</th>
        <th>Message</th>
+       <th>Actions</th>
    </tr>
-    {% for time in all %}
+    {% for contact in all %}
 
     <tr>
-        <td>{{ time.name  }}</td>
-        <td>{{ time.name }}</td>
-        <td>{{ time.name }}</td>
-        <td>{{ time.name }}</td>
-    </tr>
-
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.subject }}</td>
+        <td>{{ contact.message }}</td>
         <td>
             <a href=""class=" btn btn-outline-success">Edit</a>
-            <a href="/delete/{{ time.id }}"class="btn btn-outline-danger">Delete</a>
+            <a href="/delete/{{ contact.id }}"class="btn btn-outline-danger">Delete</a>
         </td>
+
+    </tr>
+
 
     {% endfor %}
 </table>

@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h1 class="text-center">List of Appointments</h1>
+
+<table class="table table-primary container">
+<tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>DateTime</th>
+    <th>Department</th>
+    <th>Doctor</th>
+    <th>Message</th>
+    <th>Action</th>
+</tr>
+
+
+{% for appointment in all %}
+    <tr>
+        <td>{{ appointment.name }}</td>
+        <td>{{ appointment.email }}</td>
+        <td>{{ appointment.phone }}</td>
+        <td>{{ appointment.datetime }}</td>
+        <td>{{ appointment.department }}</td>
+        <td>{{ appointment.doctor }}</td>
+        <td>{{ appointment.message }}</td>
+        <td>
+            <a href="/edit/{{ appointment.id }}" class="btn btn-outline-success">Edit</a>
+            <a href="/delete/{{ appointment.id }}" class="btn btn-outline-danger">Delete</a>
+        </td>
+    </tr>
+	
+{% endfor %}
+
+1
+</table>
+
+
+
+{% endblock %}
