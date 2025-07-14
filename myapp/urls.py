@@ -18,4 +18,11 @@ urlpatterns = [
     path('showcontact/', views.show_contact, name='showcontact'),
     path('edit/<int:id>', views.edit, name='edit'),
     path('delete/<int:id>', views.delete),
+
+    #Mpesa API URLS
+    path('pay/', views.pay, name='pay'),
+    path('stk/', views.stk, name='stk'),
+    path('token/', views.token, name='token'),
+    path('transactions/', views.transactions_list, name='transactions'),
+
 ]
